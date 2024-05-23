@@ -2,6 +2,11 @@
 const route = useRoute()
 const isNewNuxtLogo = ref(null)
 const isOldNuxtLogo = ref(null)
+// alternatively store the info in a cookie
+const uwuCookie = useCookie('uwu-mode', {
+  default: () => false
+})
+isNewNuxtLogo.value = uwuCookie.value
 
 watch(() => route.fullPath, () => {
   if (route.fullPath === '/?new') {
@@ -15,6 +20,8 @@ watch(() => route.fullPath, () => {
     isOldNuxtLogo.value = false
   }
 }, { immediate: true })
+
+
 
 
 </script>
