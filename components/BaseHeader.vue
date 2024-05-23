@@ -1,10 +1,9 @@
 <template>
   <div>
     <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
+      <NuxtLink class="links active" to="/">Home</NuxtLink>
+      <NuxtLink class="links" to="old-logo">Old logo</NuxtLink>
+      <NuxtLink class="links" to="new-logo">New logo</NuxtLink>
     </ul>
   </div>
 </template>
@@ -23,11 +22,11 @@
   background-color: #333;
 }
 
-li {
+.links {
   float: left;
 }
 
-li a {
+.links {
   display: block;
   color: white;
   text-align: center;
@@ -35,7 +34,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+.links:hover:not(.active) {
   background-color: #111;
 }
 
